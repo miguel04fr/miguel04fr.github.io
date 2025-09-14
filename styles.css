@@ -29,6 +29,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Animaciones de entrada */
 @keyframes fadeInUp {
   from {
     opacity: 0;
