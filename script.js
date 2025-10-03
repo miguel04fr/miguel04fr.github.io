@@ -4,7 +4,7 @@ document.querySelectorAll('nav a[href^="#"]').forEach(function(anchor) {
     e.preventDefault();
     var target = document.querySelector(this.getAttribute('href'));
     if (!target) return;
-    window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+    window.scrollTo({ top: target.offsetTop, behavior: 'smooth' });
   });
 });
 var sectionIds = Array.from(document.querySelectorAll('section')).map(function(s){ return s.id; });
@@ -66,7 +66,6 @@ if (backToTopBtn) {
 
 // Toggle de tema oscuro/claro
 var themeToggle = document.getElementById('themeToggle');
-var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 var savedTheme = localStorage.getItem('theme');
 
 function applyTheme(theme){
@@ -81,7 +80,7 @@ function applyTheme(theme){
   }
 }
 
-applyTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
+applyTheme(savedTheme || 'dark');
 
 if (themeToggle) {
   themeToggle.addEventListener('click', function(){
@@ -96,14 +95,7 @@ document.querySelectorAll('section').forEach(function(sec){
   sec.setAttribute('tabindex', '-1');
 });
 
-// Efecto de parallax suave en el header
-window.addEventListener('scroll', function(){
-  var scrolled = window.pageYOffset;
-  var header = document.querySelector('header');
-  if (header) {
-    header.style.transform = 'translateY(' + scrolled * 0.5 + 'px)';
-  }
-}, { passive: true });
+// Eliminado parallax del header para que no se mueva al hacer scroll
 
 // Efecto de typing en el título principal
 function typeWriter(element, text, speed = 100) {
