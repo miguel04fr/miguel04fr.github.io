@@ -146,3 +146,40 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 
+// Filtros de proyectos por tecnología
+document.addEventListener('DOMContentLoaded', function(){
+  var filterButtons = Array.from(document.querySelectorAll('.filter-btn'));
+  var projects = Array.from(document.querySelectorAll('.project'));
+  if (!filterButtons.length || !projects.length) return;
+
+  function applyFilter(tag){
+    projects.forEach(function(card){
+      var tags = (card.getAttribute('data-tags') || '').split(/\s+/).filter(Boolean);
+      var show = tag === 'all' || tags.includes(tag);
+      card.style.display = show ? '' : 'none';
+    });
+  }
+
+  filterButtons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var selected = this.getAttribute('data-filter');
+      filterButtons.forEach(function(b){
+        var pressed = b === btn;
+        b.classList.toggle('active', pressed);
+        b.setAttribute('aria-pressed', String(pressed));
+      });
+      applyFilter(selected);
+    });
+    // Teclado: activar con Enter/Espacio
+    btn.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        btn.click();
+      }
+    });
+  });
+
+  // Estado inicial
+  applyFilter('all');
+});
+

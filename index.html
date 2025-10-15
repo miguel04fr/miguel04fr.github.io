@@ -4,10 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio - Miguel</title>
+  <meta name="description" content="Portfolio de Miguel Folguera Rivera, desarrollador web. Proyectos en Java, JavaScript, Angular, React y más.">
+  <meta name="author" content="Miguel Folguera Rivera">
+  <meta name="theme-color" content="#3b82f6">
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Portfolio - Miguel Folguera Rivera">
+  <meta property="og:description" content="Desarrollador web: Java, JavaScript, Angular, React, SQL. Mira mis proyectos y experiencia.">
+  <meta property="og:url" content="https://miguel04fr.github.io/">
+  <meta property="og:image" content="https://miguel04fr.github.io/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Portfolio - Miguel Folguera Rivera">
+  <meta name="twitter:description" content="Desarrollador web con proyectos en Java/JS/Angular/React.">
+  <meta name="twitter:image" content="https://miguel04fr.github.io/og-image.jpg">
+  <link rel="canonical" href="https://miguel04fr.github.io/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🚀</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Miguel Folguera Rivera",
+    "jobTitle": "Desarrollador Web",
+    "url": "https://miguel04fr.github.io/",
+    "email": "mailto:miguel.rivera.folguera1104@gmail.com",
+    "sameAs": [
+      "https://github.com/miguel04fr"
+    ],
+    "knowsAbout": ["Java", "JavaScript", "HTML", "CSS", "Angular", "React", "SQL", "Tailwind"],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance"
+    }
+  }
+  </script>
 </head>
 <body>
   
@@ -76,32 +109,58 @@
   
   <section id="proyectos">
     <h2>Proyectos</h2>
+    <div class="filters" role="toolbar" aria-label="Filtrar proyectos por tecnología">
+      <button class="filter-btn active" data-filter="all" aria-pressed="true">Todos</button>
+      <button class="filter-btn" data-filter="js" aria-pressed="false">JavaScript</button>
+      <button class="filter-btn" data-filter="java" aria-pressed="false">Java</button>
+      <button class="filter-btn" data-filter="react" aria-pressed="false">React</button>
+      <button class="filter-btn" data-filter="angular" aria-pressed="false">Angular</button>
+      <button class="filter-btn" data-filter="css" aria-pressed="false">CSS</button>
+    </div>
     <div class="projects">
      
-      <div class="project">
+      <div class="project" data-tags="js css">
         <h3>Travel Explore</h3>
-        <p>Plataforma para explorar destinos turísticos. (JS)</p>
+        <p>Plataforma para explorar destinos turísticos.</p>
+        <div class="badges" aria-label="Tecnologías utilizadas">
+          <span class="badge badge-js">JavaScript</span>
+          <span class="badge badge-css">CSS</span>
+        </div>
         <a href="https://miguel04fr.github.io/TravelExplore/" target="_blank">Ver proyecto</a>
       </div>
-      <div class="project">
+      <div class="project" data-tags="js">
         <h3>JuegosBasicos</h3>
-        <p>Juegos basicos como el piedra papel tijeras usando. (JS)</p>
+        <p>Juegos básicos como piedra, papel o tijeras.</p>
+        <div class="badges" aria-label="Tecnologías utilizadas">
+          <span class="badge badge-js">JavaScript</span>
+        </div>
         <a href="https://miguel04fr.github.io/JuegosBasicos/" target="_blank">Ver proyecto</a>
       </div>
-      <div class="project">
+      <div class="project" data-tags="js">
         <h3>GameVerse</h3>
-        <p>Página de videojuegos para gamers. (JS)</p>
+        <p>Página de videojuegos para gamers.</p>
+        <div class="badges" aria-label="Tecnologías utilizadas">
+          <span class="badge badge-js">JavaScript</span>
+        </div>
         <a href="https://miguel04fr.github.io/GameVerse/" target="_blank">Ver proyecto</a>
       </div>
       
-      <div class="project">
+      <div class="project" data-tags="js css">
         <h3>NutrInfo</h3>
-        <p>Información y consejos de nutrición saludable. (JS/CSS)</p>
+        <p>Información y consejos de nutrición saludable.</p>
+        <div class="badges" aria-label="Tecnologías utilizadas">
+          <span class="badge badge-js">JavaScript</span>
+          <span class="badge badge-css">CSS</span>
+        </div>
         <a href="https://miguel04fr.github.io/NutrInfo/" target="_blank">Ver proyecto</a>
       </div>
-      <div class="project">
+      <div class="project" data-tags="js css">
         <h3>CryptoTracker</h3>
-        <p>Información de criptomonedas , precios y actualizaciones en tiempo real (JS/CSS)</p>
+        <p>Información de criptomonedas, precios y actualizaciones en tiempo real.</p>
+        <div class="badges" aria-label="Tecnologías utilizadas">
+          <span class="badge badge-js">JavaScript</span>
+          <span class="badge badge-css">CSS</span>
+        </div>
         <a href="https://miguel04fr.github.io/CryptoTracker/" target="_blank">Ver proyecto</a>
       </div>
     </div>
